@@ -1,6 +1,8 @@
+// Chat.tsx
 import { useState, useRef, useEffect } from "react";
 import { useModels } from "@/hooks/useModels";
 import { useChat } from "@/hooks/useChat";
+import { useCheckOllama } from "@/hooks/useCheckOllama";
 import { ModelSelector } from "@/components/ModelSelector";
 import { Message } from "@/components/Message";
 import { ChatInput } from "@/components/ChatInput";
@@ -10,6 +12,8 @@ export const OllamaChat = () => {
   const [input, setInput] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const { isError: isConnectionError, refetch: retryConnection } = useCheckOllama();
 
   const {
     data: models,
@@ -25,8 +29,8 @@ export const OllamaChat = () => {
     }
   }, [models]);
 
-  if (isModelError) {
-    return <ErrorDisplay onRetry={() => window.location.reload()} />;
+  if (isConnectionError || isModelError) {
+    return <ErrorDisplay onRetry={() => retryConnection()} />;
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -46,6 +50,12 @@ export const OllamaChat = () => {
       />
 
       <div className="messages-container">
+        {messages.length === 0 && (
+          <div className="text-center text-gray-500 mt-8">
+            <p>Connected to local Ollama instance</p>
+            <p className="text-sm">Start a conversation to begin</p>
+          </div>
+        )}
         {messages.map((message) => (
           <Message
             key={message.id}
