@@ -23,7 +23,7 @@ A modern web interface for interacting with your local Ollama instance. Built wi
 
 ## Prerequisites
 
-- [Ollama](https://ollama.ai) installed and running locally
+- [Ollama](https://ollama.com) installed and running locally
 - Node.js
 - pnpm (recommended) or npm
 
@@ -52,7 +52,7 @@ Make sure you have:
 2. The Ollama service running
 3. Ollama accessible at `http://localhost:11434`
 
-Visit ollama.ai for installation instructions.
+Visit ollama.com for installation instructions.
 
 ## Development
 

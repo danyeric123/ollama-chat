@@ -20,12 +20,12 @@ export const ErrorDisplay = ({ onRetry }: ErrorDisplayProps) => (
     <p className="text-gray-600 mb-4">
       Visit{" "}
       <a
-        href="https://ollama.ai"
+        href="https://ollama.com"
         className="text-blue-500 hover:underline"
         target="_blank"
         rel="noopener noreferrer"
       >
-        ollama.ai
+        ollama.com
       </a>{" "}
       for installation instructions.
     </p>
