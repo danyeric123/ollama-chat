@@ -1,50 +1,73 @@
-# React + TypeScript + Vite
+# Ollama Chat Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern web interface for interacting with your local Ollama instance. Built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Ollama Chat Interface](#ollama-chat-interface)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Getting Started](#getting-started)
+  - [Local Ollama Setup](#local-ollama-setup)
+  - [Development](#development)
+  - [Tech Stack](#tech-stack)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- 🤖 Connect to your local Ollama instance
+- 📝 Real-time streaming chat responses
+- 🔄 Dynamic model switching between available Ollama models
+- 💅 Clean UI with Tailwind CSS
+- ⚡ Fast refresh and HMR with Vite
 
-- Configure the top-level `parserOptions` property like this:
+## Prerequisites
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+- [Ollama](https://ollama.ai) installed and running locally
+- Node.js
+- pnpm (recommended) or npm
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+
+```sh
+pnpm install
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+3. Start the development server:
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
+```sh
+pnpm dev
 ```
+
+4. Open `http://localhost:5173` in your browser
+
+## Local Ollama Setup
+
+Make sure you have:
+
+1. Ollama installed on your computer
+2. The Ollama service running
+3. Ollama accessible at `http://localhost:11434`
+
+Visit ollama.ai for installation instructions.
+
+## Development
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm preview` - Preview production build
+- `pnpm lint` - Run ESLint
+- `pnpm format` - Format code with Prettier
+
+## Tech Stack
+
+- React 18
+- TypeScript
+- Vite
+- TanStack Query
+- Tailwind CSS
+- React Markdown
+- Axios
