@@ -13,7 +13,8 @@ export const OllamaChat = () => {
   const [selectedModel, setSelectedModel] = useState("");
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const { isError: isConnectionError, refetch: retryConnection } = useCheckOllama();
+  const { isError: isConnectionError, refetch: retryConnection } =
+    useCheckOllama();
 
   const {
     data: models,

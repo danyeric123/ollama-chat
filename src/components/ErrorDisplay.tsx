@@ -9,7 +9,7 @@ export const ErrorDisplay = ({ onRetry }: ErrorDisplayProps) => (
     <AlertCircle className="w-12 h-12 text-red-500 mb-4" />
     <h2 className="text-xl font-semibold mb-2">Local Ollama Not Found</h2>
     <p className="text-gray-600 mb-4">
-      This application requires Ollama to be running locally on your machine. 
+      This application requires Ollama to be running locally on your machine.
       Please make sure:
     </p>
     <ul className="text-left text-gray-600 mb-4">
@@ -18,9 +18,16 @@ export const ErrorDisplay = ({ onRetry }: ErrorDisplayProps) => (
       <li className="mb-2">3. It's accessible at http://localhost:11434</li>
     </ul>
     <p className="text-gray-600 mb-4">
-      Visit <a href="https://ollama.ai" className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
+      Visit{" "}
+      <a
+        href="https://ollama.ai"
+        className="text-blue-500 hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         ollama.ai
-      </a> for installation instructions.
+      </a>{" "}
+      for installation instructions.
     </p>
     <button
       onClick={onRetry}
